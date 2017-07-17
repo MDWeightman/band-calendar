@@ -1,0 +1,28 @@
+[debug] [2017-07-17T15:58:05.786Z] ----------------------------------------------------------------------
+[debug] [2017-07-17T15:58:05.790Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\mweight\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-07-17T15:58:05.790Z] CLI Version:  3.9.1
+[debug] [2017-07-17T15:58:05.791Z] Platform:     win32
+[debug] [2017-07-17T15:58:05.791Z] Node Version: v4.3.1
+[debug] [2017-07-17T15:58:05.792Z] Time:         Mon Jul 17 2017 16:58:05 GMT+0100 (GMT Daylight Time)
+[debug] [2017-07-17T15:58:05.792Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-17T15:58:05.814Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-17T15:58:05.814Z] > authorizing via signed-in user
+[debug] [2017-07-17T15:58:05.817Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/band-calendar-d77f2  
+ Mon Jul 17 2017 16:58:05 GMT+0100 (GMT Daylight Time)
+[debug] [2017-07-17T15:58:06.622Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-17T15:58:06.623Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/band-calendar-d77f2/tokens  
+ Mon Jul 17 2017 16:58:06 GMT+0100 (GMT Daylight Time)
+[debug] [2017-07-17T15:58:07.296Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\inetpub\wwwroot\BandCalendar'...
+[info] 
+[debug] [2017-07-17T15:58:07.300Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/band-calendar-d77f2  
+ Mon Jul 17 2017 16:58:07 GMT+0100 (GMT Daylight Time)
+[debug] [2017-07-17T15:58:07.990Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-17T15:58:07.990Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/698243681584/clients/_:getWebAppConfig  
+ Mon Jul 17 2017 16:58:07 GMT+0100 (GMT Daylight Time)
+[debug] [2017-07-17T15:58:08.527Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: app
+[info] +  hosting: Local server: http://localhost:5000
+
