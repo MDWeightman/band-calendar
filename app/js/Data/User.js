@@ -29,6 +29,7 @@ class _User extends Firebase{
 
 	updateUser(user){
 		let data = {
+			name: user.displayName.split(" ")[0],
 			displayName: user.displayName,
 			email: user.email,
 			emailVerified: user.emailVerified,
@@ -79,7 +80,7 @@ class _User extends Firebase{
 		}
 		if(this.data.displayName){
 			document.getElementById("appbar-user-avatar").classList.remove("hidden");
-			document.getElementById("appbar-user-name").innerHTML = this.data.displayName;
+			document.getElementById("appbar-user-name").innerHTML = this.data.name;
 		}
 		Application.render();
 	}

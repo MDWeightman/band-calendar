@@ -18,6 +18,9 @@ class _UI{
 				},150);
 			}
 		});
+		if(document.documentElement.clientWidth <= 960){
+			UI.Sidebar.close(event);
+		}
 	}
 
 	addEventListeners(){

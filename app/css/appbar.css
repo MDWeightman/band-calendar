@@ -93,3 +93,24 @@ div#appbar {
 div#appbar-server {
 	flex: 0 0 auto;
 }
+
+#appbar-menu {
+	display: none;
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	margin: 0px;
+	fill: rgba(255,255,255,0.7);
+	cursor:pointer;
+}
+
+#appbar-menu:hover {
+	fill: rgba(255,255,255,1);
+}
+
+
+@media screen and (max-width: 960px) {
+	#appbar-menu {
+		display: block;
+	}
+}

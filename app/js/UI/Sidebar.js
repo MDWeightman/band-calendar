@@ -24,6 +24,17 @@ class Sidebar{
 		return null;
 	}
 
+	open(event){
+		event.stopImmediatePropagation();
+		this.container.classList.remove("collapsed");
+		this.container.classList.add("active");
+	}
+
+	close(event){
+		event.stopImmediatePropagation();
+		this.container.classList.remove("active");
+	}
+
 	setUp(){
 		if(this.groups.length == 0){
 			if(User.data){
@@ -44,7 +55,7 @@ class Sidebar{
 					label: "Bands",
 					items: [
 						new SidebarItem({
-							icon: Constants.SVG.CALENDAR,
+							icon: Constants.SVG.CONDUCTOR,
 							label: 'Manage Bands',
 							screen: 'Bands',
 							event: ()=>{
