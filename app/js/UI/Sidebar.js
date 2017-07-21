@@ -46,7 +46,7 @@ class Sidebar{
 							label: 'Band Calendar',
 							screen: 'BandCalendar',
 							event: ()=>{
-								Application.Screen.set(Screen_BandCalendar);
+								Application.Screen.set(Screen_Calendar);
 							}
 						})
 					]
@@ -59,7 +59,7 @@ class Sidebar{
 							label: 'Manage Bands',
 							screen: 'Bands',
 							event: ()=>{
-								Application.Screen.set(Screen_BandCalendar);
+								Application.Screen.set(Screen_Bands);
 							}
 						})
 					]

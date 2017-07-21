@@ -1,4 +1,4 @@
-class _Screen_BandCalendar{
+class _Screen_Calendar{
 	constructor(){
 		this.name = "BandCalendar";
 	}
@@ -14,4 +14,4 @@ class _Screen_BandCalendar{
 	}
 }
 
-let Screen_BandCalendar = new _Screen_BandCalendar();
+let Screen_Calendar = new _Screen_Calendar();

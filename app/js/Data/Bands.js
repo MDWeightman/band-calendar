@@ -1,6 +1,7 @@
 class _Bands extends Firebase{
 	constructor(){
 		super();
+		this.node = 'bands';
 		this.data = null;
 	}
 
@@ -10,21 +11,23 @@ class _Bands extends Firebase{
 	}
 
 	getBands(){
-		return firebase.database().ref('/bands').once('value').then(snapshot => {
+		return firebase.database().ref(`/${this.node}`).once('value').then(snapshot => {
 			this.setData(snapshot.val());
 		});
 	}
 
 	createBand(band){
-		var newBandKey = firebase.database().ref().child('bands').push().key;
+		var newBandKey = firebase.database().ref().child(`${this.node}`).push().key;
 		var updates = {};
-		updates['/bands/' + newBandKey] = {
+		updates[`${this.node}/${newBandKey}`] = {
 			name: band.name,
 			colour: band.colour,
 			members: {}
 		};
 
-		return firebase.database().ref().update(updates);
+		return firebase.database().ref().update(updates).then(()=>{
+			return this.getBands();
+		});
 	}
 }
 

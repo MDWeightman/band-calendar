@@ -12,6 +12,15 @@ class _Utils{
 		return key;
 	}
 
+	makeColor() {
+		let letters = '0123456789ABCDEF';
+		let color = '#';
+		for (let i = 0; i < 6; i++) {
+			color += letters[Math.floor(Math.random() * 16)];
+		}
+		return color;
+	}
+
 	isElementInViewport(el) {
 		var rect = el.getBoundingClientRect();
 		return (

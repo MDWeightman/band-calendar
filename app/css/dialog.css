@@ -112,10 +112,22 @@ div#dialog-actions:empty{
 	flex-direction: column;
 }
 
+.dialog-form-item.line{
+	flex-direction: row;
+}
+
 .dialog-form-item-label {
 	color: #727272;
 	margin: 0px 0px 5px 0px;
 	font-size: 14px;
+}
+
+
+.dialog-form-item.line .dialog-form-item-label {
+	display:flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0px 0px 0px 0px;
 }
 
 .dialog-form-item-label:after {
