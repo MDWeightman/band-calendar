@@ -1,0 +1,40 @@
+.gig-card {
+    padding: 10px;
+    color: #ffffff;
+    line-height: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    /*  
+    border: 1px solid #727272;
+    border-bottom: 4px solid;
+    */
+}
+
+.gig-card-band {
+    font-size: 24px;
+    line-height: 24px;
+    height: 24px;
+    padding: 4px 0px;
+}
+
+.gig-card-location {
+    font-size: 16px;
+}
+
+.gig-date {
+    display: flex;
+    flex-direction: column;
+}
+
+.gig-date-date {
+    padding: 5px 0px;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.gig-date-month {
+    font-size: 18px;
+    line-height: 20px;
+}
