@@ -114,10 +114,10 @@ class _Utils{
 			keys.push({key:key, description: obj[key][k]});
 		}
 		keys.sort(function(a, b){
-			if (a[k] < b[k]) {
+			if (a.description < b.description) {
 				return -1 ;
 			}
-			if (a[k] > b[k]){
+			if (a.description > b.description){
 				return 1;
 			}
 			return 0;
