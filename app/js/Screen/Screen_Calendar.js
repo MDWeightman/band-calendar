@@ -1,7 +1,25 @@
 class _Screen_Calendar {
     constructor() {
         this.name = "BandCalendar";
-        this.table = new Table({});
+		this.table = new Table({});
+		this.newEvent = null;
+		this.types = {
+			GIG: 'Gig',
+			PRACTICE: 'Practice',
+			HOL: 'Holiday'
+		}
+	}
+
+	addEvent(){
+		this.newEvent = new EventCard();
+		this.renderNewEvent();
+	}
+
+	renderNewEvent(){
+		Application.workspace.innerHTML = `
+		<div class="calendar-event-card">
+			${this.newEvent.render()}
+		</div>`
 	}
 	
 	getDates(){
@@ -13,7 +31,17 @@ class _Screen_Calendar {
 				dates[i] = Gigs.data[k][i];
 				dates[i].band = Bands.data[k];
 				dates[i].type = 'GIG';
-				if(dates[i].date < now){
+				if(dates[i].date < now.getTime()){
+					delete dates[i];
+				}
+			}
+		}
+		for (let k in Practices.data) {
+			for (let i in Practices.data[k]) {
+				dates[i] = Practices.data[k][i];
+				dates[i].band = Bands.data[k];
+				dates[i].type = 'PRACTICE';
+				if(dates[i].date < now.getTime()){
 					delete dates[i];
 				}
 			}
@@ -24,6 +52,10 @@ class _Screen_Calendar {
 				dates[i].type = 'HOL';
 				let days = this.getDays(dates[i]);
 				let date = new Date(dates[i].date);
+				if(date.getTime() < now.getTime()){
+					delete dates[i];
+					continue;
+				}
 				for(let d = 0; d < days; d++){
 					date.setDate(date.getDate()+1);
 					dates[i+d] = JSON.parse(JSON.stringify(Holidays.data[k][i]));
@@ -46,11 +78,12 @@ class _Screen_Calendar {
 		let dates = this.getDates(); console.log(dates);
         for (let d in dates) {
 			let event = dates[d];
+			let type = event.type;
 			let row = new TableRow();
 			let date = new Date(event.date);
 			row.addColumn({
 				style: 'width:100px;max-width:100px;vertical-align: top;',
-				wrapperStyle: 'padding: 12px 12px;',
+				wrapperStyle: 'padding: 6px 6px;',
 				padding: false,
 				input: new GigDate({
 					date: date.getDate(),
@@ -59,28 +92,64 @@ class _Screen_Calendar {
 				})
 			});
 			row.addColumn({
-				input: event.type == 'GIG'
-				? new GigCard({
-					band: event.band,
-					data: event
-				}) : new HolCard({
-					colour: '#F44336',
-					data: event
-				})
+				wrapperStyle: 'vertical-align: top;padding: 0px 12px;',
+				input: this.getInputType(event)
 			})
 
 			this.table.addRow(row);
 		}
 
         Application.workspace.innerHTML = this.table.render();
-    }
+	}
+	
+	getInputType(event){
+		switch(event.type) {
+			case 'GIG': return new GigCard({
+				band: event.band,
+				data: event
+			});
+			case 'HOL': return new HolCard({
+				colour: '#F44336',
+				data: event
+			});
+			case 'PRACTICE': return new PracticeCard({
+				band: event.band,
+				data: event
+			});
+		}
+	}
 
     render() {
         let HTML = '';
-        UI.Toolbar.setTitle("Calendar");
-        UI.Toolbar.tabs.clear();
 
-        this.renderTable();
+		if(this.newEvent){
+			UI.Toolbar.setTitle("Add Event");
+			UI.Toolbar.tabs.clear();
+			UI.Toolbar.setActions([
+				new ToolbarAction({
+					icon: Constants.SVG.SAVE,
+					label: 'Save Event',
+					event: () => {
+						this.saveEvent();
+					}
+				})
+			]);
+			this.renderNewEvent();
+		}
+		else{
+			UI.Toolbar.setTitle("Calendar");
+			UI.Toolbar.tabs.clear();
+			UI.Toolbar.setActions([
+				new ToolbarAction({
+					icon: Constants.SVG.PLUS,
+					label: 'Add Event',
+					event: () => {
+						this.addEvent();
+					}
+				})
+			]);
+        	this.renderTable();
+		}
 
         UI.render();
         UI.Dialog.clear();

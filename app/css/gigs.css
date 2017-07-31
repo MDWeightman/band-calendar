@@ -1,5 +1,5 @@
 .gig-card {
-    padding: 10px;
+    padding: 6px 12px;
     color: #ffffff;
     line-height: 20px;
     font-size: 16px;
@@ -13,10 +13,10 @@
 }
 
 .gig-card-band {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 24px;
     height: 24px;
-    padding: 4px 0px;
+    padding: 0px 0px;
 }
 
 .gig-card-location {
@@ -29,7 +29,7 @@
 }
 
 .gig-date-date {
-    padding: 5px 0px;
+    padding: 0px 0px 5px 0px;
     font-size: 24px;
     line-height: 24px;
 }
@@ -40,6 +40,38 @@
 }
 
 .gig-date-day {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
+}
+
+.gig-card-type {
+	position: absolute;
+	top: 0px;
+	right: 16px;
+	font-size: 10px;
+	color: rgba(255,255,255,0.7)
+}
+
+.calendar-event-card {
+	width: 100%;
+	background-color: #ffffff;
+}
+
+.calendar-event-form-item {
+	display: flex;
+	flex-direction: row;
+}
+
+.calendar-event-form-item-label {
+	flex: 0 0 auto;
+	width: 100px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0px 12px;
+	font-size: 16px;
+}
+
+.calendar-event-form-item-input {
+	flex: 1 1 auto;
 }

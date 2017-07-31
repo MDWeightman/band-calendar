@@ -1,6 +1,7 @@
 class DatePicker extends TextInput{
 	constructor(o){
 		super(o);
+		this.full = o ? o.full : false,
 		this.value = o ? o.value || null : null;
 		this.calendar = new DatePickerCalendar({
 			picker: this,
@@ -9,6 +10,11 @@ class DatePicker extends TextInput{
 	}
 
 	fixValue(value){
+		let date = new Date(value);
+		if(date){
+			value = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
+		}
+
 		let d = value.split('-');
 		return `${d[1]}/${('00'+(d[2])).slice(-2)}/${d[0]}`;
 	}
@@ -249,6 +255,7 @@ class DialogDatePicker extends DialogItem{
 	constructor(o){
 		super(o);
 		this.calendar = o.calendar;
+		this.full = o.calendar.picker.full;
 		this.padding = false,
 		this.actions = new DialogActions([
 			new DialogAction({

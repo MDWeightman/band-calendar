@@ -118,4 +118,14 @@ div#appbar-server {
     #appbar-user {
         padding: 9px 10px 9px 10px;
     }
+    #appbar-icon {
+        display: none;
+    }
+
+    #appbar-title {
+        margin: 0px 6px;
+    }
+    #appbar-title-text {
+        font-size: 20px
+    }
 }

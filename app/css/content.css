@@ -21,7 +21,6 @@
 
 #content::-webkit-scrollbar-thumb {
     background: rgba(114, 114, 114, 0.5);
-    );
     width: 4px;
     border: solid transparent;
     border-width: 4px 4px 4px 4px;
@@ -413,4 +412,8 @@ input[type="checkbox"]:checked:before {
         padding: 0px 0px;
         width: 100%;
     }
+    #content::-webkit-scrollbar {
+        display: none;
+    }
+
 }
