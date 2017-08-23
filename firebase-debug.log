@@ -1,0 +1,64 @@
+[debug] [2017-08-23T13:32:22.831Z] ----------------------------------------------------------------------
+[debug] [2017-08-23T13:32:22.834Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\micah\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-08-23T13:32:22.834Z] CLI Version:  3.9.1
+[debug] [2017-08-23T13:32:22.834Z] Platform:     win32
+[debug] [2017-08-23T13:32:22.834Z] Node Version: v6.9.2
+[debug] [2017-08-23T13:32:22.834Z] Time:         Wed Aug 23 2017 14:32:22 GMT+0100 (GMT Daylight Time)
+[debug] [2017-08-23T13:32:22.834Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-23T13:32:22.855Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-23T13:32:22.855Z] > authorizing via signed-in user
+[debug] [2017-08-23T13:32:22.857Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-08-23T13:32:22.857Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/1gtFL97ucA2buj3RdF4sCb4UYtqk_pi7UFPAFGWjC-k',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Aug 23 2017 14:32:22 GMT+0100 (GMT Daylight Time)
+[debug] [2017-08-23T13:32:23.105Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-23T13:32:23.120Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/band-calendar-d77f2  
+ Wed Aug 23 2017 14:32:23 GMT+0100 (GMT Daylight Time)
+[debug] [2017-08-23T13:32:23.981Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-23T13:32:23.984Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/band-calendar-d77f2/tokens  
+ Wed Aug 23 2017 14:32:23 GMT+0100 (GMT Daylight Time)
+[debug] [2017-08-23T13:32:25.235Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\micah\projects\band-calendar'...
+[info] 
+[debug] [2017-08-23T13:32:25.246Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/band-calendar-d77f2  
+ Wed Aug 23 2017 14:32:25 GMT+0100 (GMT Daylight Time)
+[debug] [2017-08-23T13:32:26.026Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-23T13:32:26.028Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/698243681584/clients/_:getWebAppConfig  
+ Wed Aug 23 2017 14:32:26 GMT+0100 (GMT Daylight Time)
+[debug] [2017-08-23T13:32:26.669Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: app
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2017-08-23T13:55:53.339Z] ----------------------------------------------------------------------
+[debug] [2017-08-23T13:55:53.340Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\micah\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-08-23T13:55:53.341Z] CLI Version:  3.9.1
+[debug] [2017-08-23T13:55:53.341Z] Platform:     win32
+[debug] [2017-08-23T13:55:53.341Z] Node Version: v6.9.2
+[debug] [2017-08-23T13:55:53.341Z] Time:         Wed Aug 23 2017 14:55:53 GMT+0100 (GMT Daylight Time)
+[debug] [2017-08-23T13:55:53.341Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-23T13:55:53.352Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-23T13:55:53.352Z] > authorizing via signed-in user
+[debug] [2017-08-23T13:55:53.354Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/band-calendar-d77f2  
+ Wed Aug 23 2017 14:55:53 GMT+0100 (GMT Daylight Time)
+[debug] [2017-08-23T13:55:59.049Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-23T13:55:59.052Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/band-calendar-d77f2/tokens  
+ Wed Aug 23 2017 14:55:59 GMT+0100 (GMT Daylight Time)
+[debug] [2017-08-23T13:55:59.705Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\micah\projects\band-calendar'...
+[info] 
+[debug] [2017-08-23T13:55:59.713Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/band-calendar-d77f2  
+ Wed Aug 23 2017 14:55:59 GMT+0100 (GMT Daylight Time)
+[debug] [2017-08-23T13:56:00.425Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-23T13:56:00.426Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/698243681584/clients/_:getWebAppConfig  
+ Wed Aug 23 2017 14:56:00 GMT+0100 (GMT Daylight Time)
+[debug] [2017-08-23T13:56:00.924Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: app
+[info] +  hosting: Local server: http://localhost:5000
+

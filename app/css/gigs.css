@@ -45,33 +45,34 @@
 }
 
 .gig-card-type {
-	position: absolute;
-	top: 0px;
-	right: 16px;
-	font-size: 10px;
-	color: rgba(255,255,255,0.7)
+    position: absolute;
+    top: 0px;
+    right: 16px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7)
 }
 
 .calendar-event-card {
-	width: 100%;
-	background-color: #ffffff;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.26);
 }
 
 .calendar-event-form-item {
-	display: flex;
-	flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .calendar-event-form-item-label {
-	flex: 0 0 auto;
-	width: 100px;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	padding: 0px 12px;
-	font-size: 16px;
+    flex: 0 0 auto;
+    width: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 12px;
+    font-size: 16px;
 }
 
 .calendar-event-form-item-input {
-	flex: 1 1 auto;
+    flex: 1 1 auto;
 }

@@ -8,22 +8,29 @@ class TimePicker extends TextInput {
         });
     }
 
-    addEventListener() {
-        setTimeout(() => {
-            if (document.getElementById(this.id)) {
-                document.getElementById(this.id).addEventListener("click", (event) => {
-                    event.stopImmediatePropagation();
-                    this.dialog();
-                });
-            }
-        }, 500);
-        return this;
-    }
+    // addEventListener() {
+    //     setTimeout(() => {
+    //         if (document.getElementById(this.id)) {
+    //             document.getElementById(this.id).addEventListener("click", (event) => {
+    //                 event.stopImmediatePropagation();
+    //                 this.dialog();
+    //             });
+    //         }
+    //     }, 500);
+    //     return this;
+    // }
 
     dialog() {
         UI.Dialog.show(new DialogTimePicker({
             clock: this.clock
         }));
+    }
+    render() {
+        super.render();
+        return `
+		<div class="data-input-container">
+			<input type="time" style="${this.style}" class="data-input ${this.error ? "error" : ""}" id="${this.id}" value="${this.value}" />
+		</div>`
     }
 }
 

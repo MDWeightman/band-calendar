@@ -26,6 +26,9 @@ class _User extends Firebase {
         } else {
             document.getElementById("appbar-user-name").removeEventListener("click", User.loginDialog);
         }
+        setTimeout(() => {
+            Application.Screen.set(Screen_Calendar);
+        }, 1000);
     }
 
     updateUser(user) {

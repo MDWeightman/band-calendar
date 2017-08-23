@@ -16,6 +16,16 @@ class _Bands extends Firebase {
         });
     }
 
+    getBand(name) {
+        for (let k in this.data) {
+            this.data[k].key = k;
+            if (this.data[k].name == name) {
+                return this.data[k];
+            }
+        }
+        return null;
+    }
+
     createBand(band) {
         var newBandKey = firebase.database().ref().child(`${this.node}`).push().key;
         var updates = {};
@@ -26,10 +36,9 @@ class _Bands extends Firebase {
         };
 
         return firebase.database().ref().update(updates).then(() => {
-            return this.getBands();
+            //Application.getData();
         });
     }
 }
 
 let Bands = new _Bands();
-Bands.getBands();

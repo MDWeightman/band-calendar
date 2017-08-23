@@ -65,40 +65,53 @@ class GigDate {
     }
 }
 
-class EventCard{
-	constructor(o){
-		this.type = new Menu({
-			label: 'Event Type',
-			dark: true,
-			optionsStyle: 'right:10px;width:200px;',
-			options: new MenuOptions()
-		});
-		this.band = new Menu({
-			label: 'Band',
-			dark: true,
-			optionsStyle: 'right:10px;width:200px;',
-			options: new MenuOptions()
-		});
-		this.date = new DatePicker({
-			full: true,
-			value: new Date().getTime()
-		})
-		this.setUp();
-	}
+class EventCard {
+    constructor(o) {
+        this.type = new Menu({
+            label: 'Event Type',
+            dark: true,
+            optionsStyle: 'right:10px;width:200px;',
+            options: new MenuOptions()
+        });
+        this.band = new Menu({
+            label: 'Band',
+            dark: true,
+            optionsStyle: 'right:10px;width:200px;',
+            options: new MenuOptions()
+        });
+        this.location = new TextInput({
+            value: '',
+            placeholder: 'Location',
+            style: 'box-shadow:none;'
+        });
+        this.date = new DatePicker({
+            value: new Date().getTime(),
+            style: 'box-shadow:none;'
+        });
+        this.endDate = new DatePicker({
+            value: new Date().getTime(),
+            style: 'box-shadow:none;'
+        });
+        this.time = new TimePicker({
+            value: new Date().getTime(),
+            style: 'box-shadow:none;'
+        });
+        this.setUp();
+    }
 
-	setUp(){
-		for (let k in Screen_Calendar.types) {
+    setUp() {
+        for (let k in Screen_Calendar.types) {
             let type = Screen_Calendar.types[k];
             this.type.options.addItem({
                 value: k,
                 label: type,
                 event: () => {
                     this.type.setSelected(k);
-					Screen_Calendar.renderNewEvent();
+                    Screen_Calendar.renderNewEvent();
                 }
             });
         }
-		for (let k in Bands.data) {
+        for (let k in Bands.data) {
             let band = Bands.data[k];
             this.band.options.addItem({
                 value: k,
@@ -108,10 +121,10 @@ class EventCard{
                 }
             });
         }
-	}
+    }
 
-	render(){
-		return `
+    render() {
+        return `
 		<div class="calendar-event-form">
 			<div class="calendar-event-form-item">
 				<div class="calendar-event-form-item-label">Event Type</div>
@@ -122,9 +135,21 @@ class EventCard{
 				<div class="calendar-event-form-item-input">${this.band.render()}</div>
 			</div>
 			<div class="calendar-event-form-item" style="${!this.type.selected ? "display:none;" : ""}">
+				<div class="calendar-event-form-item-label">Location</div>
+				<div class="calendar-event-form-item-input">${this.location.render()}</div>
+			</div>
+			<div class="calendar-event-form-item" style="${!this.type.selected ? "display:none;" : ""}">
 				<div class="calendar-event-form-item-label">Date</div>
 				<div class="calendar-event-form-item-input">${this.date.render()}</div>
 			</div>
+			<div class="calendar-event-form-item" style="${!this.type.selected && this.type.selected != 'HOL' ? "display:none;" : ""}">
+				<div class="calendar-event-form-item-label">End Date</div>
+				<div class="calendar-event-form-item-input">${this.endDate.render()}</div>
+			</div>
+			<div class="calendar-event-form-item" style="${!this.type.selected || this.type.selected == 'HOL'  ? "display:none;" : ""}">
+				<div class="calendar-event-form-item-label">Time</div>
+				<div class="calendar-event-form-item-input">${this.time.render()}</div>
+			</div>
 		</div>`
-	}
+    }
 }

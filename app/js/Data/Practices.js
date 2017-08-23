@@ -2,7 +2,7 @@ class _Practices extends Firebase {
     constructor() {
         super();
         this.data = null;
-		this.node = 'practices';
+        this.node = 'practices';
     }
 
     setData(data) {
@@ -22,11 +22,10 @@ class _Practices extends Firebase {
         updates[`${this.node}/${bandKey}/${newKey}`] = data
 
         return firebase.database().ref().update(updates).then(() => {
-            //return this.getBands();
+            Application.getData(Screen_Calendar);
         });
     }
 
 }
 
 let Practices = new _Practices();
-Practices.getPractices();

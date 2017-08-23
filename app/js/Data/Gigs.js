@@ -22,11 +22,10 @@ class _Gigs extends Firebase {
         updates[`${this.node}/${bandKey}/${newKey}`] = data
 
         return firebase.database().ref().update(updates).then(() => {
-            //return this.getBands();
+            Application.getData(Screen_Calendar);
         });
     }
 
 }
 
 let Gigs = new _Gigs();
-Gigs.getGigs();

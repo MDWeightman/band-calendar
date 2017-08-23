@@ -10,7 +10,7 @@ class _Holidays extends Firebase {
         console.log(this.node, this.data);
     }
 
-    getGigs() {
+    getHolidays() {
         return firebase.database().ref(`/${this.node}`).on('value', snapshot => {
             this.setData(snapshot.val());
         });
@@ -22,11 +22,10 @@ class _Holidays extends Firebase {
         updates[`${this.node}/${userKey}/${newKey}`] = data
 
         return firebase.database().ref().update(updates).then(() => {
-            //return this.getBands();
+            Application.getData(Screen_Calendar);
         });
     }
 
 }
 
 let Holidays = new _Holidays();
-Holidays.getGigs();
